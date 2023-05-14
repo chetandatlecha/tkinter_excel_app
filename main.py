@@ -4,12 +4,12 @@ import openpyxl
 
 
 def load_data():
-    path = "D:\codefirst.io\Tkinter Excel App\people.xlsx"
+    path = "D:/tkinter_excel_app/people.xlsx"
     workbook = openpyxl.load_workbook(path)
     sheet = workbook.active
 
     list_values = list(sheet.values)
-    print(list_values)
+    #print(list_values)
     for col_name in list_values[0]:
         treeview.heading(col_name, text=col_name)
 
@@ -23,10 +23,10 @@ def insert_row():
     subscription_status = status_combobox.get()
     employment_status = "Employed" if a.get() else "Unemployed"
 
-    print(name, age, subscription_status, employment_status)
+    #print(name, age, subscription_status, employment_status)
 
     # Insert row into Excel sheet
-    path = "D:\codefirst.io\Tkinter Excel App\people.xlsx"
+    path = "D:/tkinter_excel_app/people.xlsx"
     workbook = openpyxl.load_workbook(path)
     sheet = workbook.active
     row_values = [name, age, subscription_status, employment_status]
